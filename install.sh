@@ -1,8 +1,14 @@
 #!/bin/bash
 
-  DOT_FILES=(.bashrc .bash_profile)
+echo "start setup..."
 
- for file in ${DOT_FILES[@]}
- do
-     ln -s $HOME/dotfiles/$file $HOME/$file
- done
+for f in .??*; do
+    [ "$f" = ".git" ] && continue
+    [ "$f" = ".gitconfig.local.template" ] && continue
+    [ "$f" = ".require_oh-my-zsh" ] && continue
+    [ "$f" = ".gitmodules" ] && continue
+
+    ln -snfv ~/dotfiles/"$f" ~/
+done
+
+echo "finish setup!"
