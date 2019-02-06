@@ -1,11 +1,13 @@
 [user]
-	name = “Minoru”
+	name = Minoru Miyata
 	email = miyarappo@gmail.com
 [core]
-	excludesfile = /Users/miyataminoru/.gitignore_global:
+	excludesfile = ~/.gitignore_global
 [alias]
 	st = status
 	br = branch
 	st = status
 	co = commit
 	ch = checkout
+	f = fetch -p
+	l = log --graph --oneline --all
