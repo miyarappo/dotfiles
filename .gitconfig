@@ -1,13 +1,25 @@
+[url "github.com:"]
+    InsteadOf = https://github.com/
+    InsteadOf = git@github.com:
 [user]
-	name = Minoru Miyata
-	email = miyarappo@gmail.com
-[core]
-	excludesfile = ~/.gitignore_global
+    name = Minoru Miyata
+    email = miyarappo@gmail.com
+[core] 
+    excludesfile = ~/.gitignore_global
+    editor = code --wait
 [alias]
-	st = status
-	br = branch
-	st = status
-	co = commit
-	ch = checkout
-	f = fetch -p
-	l = log --graph --oneline --all
+    br = branch
+    st = status
+    co = commit
+    ch = checkout
+    f = fetch
+    l = log --graph --oneline --all
+[merge]
+    tool = vscode
+[mergetool]
+    prompt = false
+    keepBackup = false
+[mergetool "vscode"]
+    cmd = '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' \"$MERGED\"
+    trustExitCode = false
+
