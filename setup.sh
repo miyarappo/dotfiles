@@ -14,7 +14,7 @@ fi
 
 # Homebrew packages
 echo "==> Installing Homebrew packages..."
-brew install mise starship neovim tmux yazi
+brew install mise starship neovim tmux yazi lazygit
 
 # Symlinks
 echo "==> Creating symlinks..."
