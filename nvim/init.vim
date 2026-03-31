@@ -6,6 +6,7 @@ set textwidth=0
 set autoindent
 set hlsearch
 set clipboard=unnamed
+set number
 syntax on
 
 call plug#begin()
