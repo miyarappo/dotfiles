@@ -14,7 +14,7 @@ fi
 
 # Homebrew packages
 echo "==> Installing Homebrew packages..."
-brew install mise starship neovim
+brew install mise starship neovim tmux yazi
 
 # Symlinks
 echo "==> Creating symlinks..."
@@ -26,6 +26,8 @@ ln -sfn "$DOTFILES_DIR/gitconfig" "$HOME/.gitconfig"
 ln -sfn "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
 ln -sfn "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
 ln -sfn "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
+ln -sfn "$DOTFILES_DIR/tmux.conf" "$HOME/.tmux.conf"
+ln -sfn "$DOTFILES_DIR/githooks" "$HOME/.githooks"
 
 # vim-plug
 if [ ! -f "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim" ]; then

@@ -12,6 +12,8 @@ macOS 向けの個人用 dotfiles
 | `starship.toml` | Starship プロンプトのテーマ設定 |
 | `ghostty/` | Ghostty ターミナル設定 |
 | `nvim/` | Neovim 設定 (vim-plug) |
+| `tmux.conf` | tmux 設定 |
+| `githooks/` | グローバル Git hooks |
 
 ## 前提条件
 
