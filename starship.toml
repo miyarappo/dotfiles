@@ -1,0 +1,59 @@
+command_timeout = 1000
+right_format = """$time"""
+
+[time]
+disabled = false
+style = "#939594"
+format = "[$time]($style)"
+
+[aws]
+style = "bg:#FFCA58 fg:black"
+symbol = "☁ "
+format = "[](fg:black bg:#FFCA58)[$symbol$profile]($style)[](fg:#f9a600 bg:black)"
+
+[character]
+success_symbol = "[❯](#ff9400)"
+error_symbol = "[✗](#ff4b00)"
+
+[cmd_duration]
+style = "#FFCA58"
+format = "[](fg:black bg:#FFCA58)[$duration](bg:$style fg:black)[](fg:$style)"
+
+[directory]
+style = "#BCDF59"
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+format = "[ ](fg:black bg:#BCDF59)[$path[$read_only](bg:$style fg:black)](bg:$style fg:black)[](fg:$style)"
+read_only = " "
+
+[git_branch]
+style = "#49CAE4"
+format = "[](fg:black bg:$style)[ $symbol$branch](fg:black bg:$style)[](fg:$style)"
+
+[git_commit]
+style = "#49CAE4"
+format = "\b[ ](bg:$style)[\\($hash$tag\\)](fg:black bg:$style)[](fg:$style)"
+
+[git_state]
+style = "#49CAE4"
+format = "\b[ ](bg:$style)[ \\($state( $progress_current/$progress_total)\\)](fg:black bg:$style)[](fg:$style)"
+
+[git_status]
+style = "#49CAE4"
+format = "(\b[ ](bg:$style fg:black)$conflicted$staged$modified$renamed$deleted$untracked$stashed$ahead_behind[](fg:$style))"
+conflicted = "[ ](bold fg:88 bg:#49CAE4)[  ${count} ](fg:black bg:#d8712c)"
+staged = "[ $count ](fg:black bg:#49CAE4)"
+modified = "[ ${count} ](fg:black bg:#49CAE4)"
+renamed = "[ ${count} ](fg:black bg:#49CAE4)"
+deleted = "[ ${count} ](fg:black bg:#49CAE4)"
+untracked = "[?${count} ](fg:black bg:#49CAE4)"
+stashed = "[ ${count} ](fg:black bg:#49CAE4)"
+ahead = "[ ${count} ](fg:#523333 bg:#49CAE4)"
+behind = "[ ${count} ](fg:black bg:#49CAE4)"
+diverged = "[ ](fg:88 bg:#49CAE4)[ נּ ](fg:black bg:#d8712c)[ ${ahead_count} ](fg:black bg:#d8712c)[ ${behind_count} ](fg:black bg:#d8712c)"
+
+[username]
+style_user = "#0370C0"
+style_root = "#C00311"
+format = "[](fg:black bg:$style)[$user](fg:black bg:$style)[](fg:$style)"
+

@@ -1,0 +1,40 @@
+[user]
+	name = Minoru Miyata
+	email = miyarappo@gmail.com
+[core]
+	editor = nvim
+	hooksPath = ~/.githooks
+	excludesfile = ~/.gitignore_global
+[credential]
+	helper = osxkeychain
+[init]
+	defaultBranch = main
+[alias]
+	br = branch
+	st = status
+	ci = commit
+	sw = switch
+	re = restore
+	f = fetch
+	lg = log --graph --oneline --all
+	de = "!f () { git switch $1; git branch --merged|egrep -v '\\*|develop|main'|xargs git branch -d; };f"
+	aico = "!claude /commit"
+[fetch]
+	prune = true
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[diff]
+	colorMoved = default
+	tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = nvimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+	keepBackup = false
+[mergetool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
