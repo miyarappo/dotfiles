@@ -17,7 +17,7 @@ error_symbol = "[✗](#ff4b00)"
 
 [cmd_duration]
 style = "#FFCA58"
-format = "[](fg:black bg:#FFCA58)[$duration](bg:$style fg:black)[](fg:$style)"
+format = "[](fg:black bg:#FFCA58)[ $duration ](bg:$style fg:black)[](fg:$style)"
 
 [directory]
 style = "#BCDF59"
