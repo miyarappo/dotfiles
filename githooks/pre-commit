@@ -4,7 +4,7 @@ set -eu
 branch="$(git symbolic-ref --quiet --short HEAD || true)"
 
 # ① グローバルルール（main 禁止 / 許可リストは除外）
-ALLOW_MAIN_REPOS="dotfiles"
+ALLOW_MAIN_REPOS="dotfiles wake"
 
 repo_name="$(basename "$(git rev-parse --show-toplevel 2>/dev/null)" 2>/dev/null || true)"
 
