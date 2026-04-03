@@ -55,6 +55,10 @@ _awsume() {
 export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+FPATH="$HOMEBREW_PREFIX/share/zsh-completions:$FPATH"
+autoload -Uz compinit && compinit -u
+source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 

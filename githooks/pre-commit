@@ -19,7 +19,12 @@ if [ "$branch" = "main" ]; then
   esac
 fi
 
-# ② repo 固有 hook があれば実行
+# ② gitleaks（シークレット漏洩チェック）
+if command -v gitleaks >/dev/null 2>&1; then
+  gitleaks protect --staged --verbose
+fi
+
+# ③ repo 固有 hook があれば実行
 if [ -x .githooks/pre-commit ]; then
   ./.githooks/pre-commit
 fi
