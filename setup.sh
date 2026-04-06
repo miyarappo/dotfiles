@@ -14,7 +14,7 @@ fi
 
 # Homebrew packages
 echo "==> Installing Homebrew packages..."
-brew install mise starship neovim tmux gitleaks glow zsh-autosuggestions zsh-syntax-highlighting zsh-completions
+brew install mise starship neovim tmux gitleaks glow ripgrep zsh-autosuggestions zsh-syntax-highlighting zsh-completions
 brew install --cask cmux
 
 # Symlinks

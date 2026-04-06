@@ -69,10 +69,17 @@ require("lazy").setup({
     "sindrets/diffview.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 })
 
 -- Keymaps
 vim.keymap.set("n", "<C-n>", "<cmd>Neotree toggle<CR>", { silent = true })
+vim.keymap.set("n", "<C-p>", "<cmd>Telescope git_files<CR>", { desc = "Git ファイル検索" })
+vim.keymap.set("n", "<C-f>", "<cmd>Telescope live_grep<CR>", { desc = "全文検索" })
 vim.keymap.set("n", "<C-g>", function()
   local lib = require("diffview.lib")
   if lib.get_current_view() then
