@@ -38,6 +38,7 @@ alias aico="ai_commit"
 alias vi="nvim"
 alias vim="nvim"
 alias view="nvim -R"
+alias md="glow -p"
 
 # Rancher Desktop
 export PATH="$HOME/.rd/bin:$PATH"
