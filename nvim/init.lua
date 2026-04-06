@@ -9,6 +9,12 @@ vim.o.hlsearch = true
 vim.o.clipboard = "unnamed"
 vim.o.number = true
 vim.o.termguicolors = true
+vim.o.autoread = true
+
+-- Auto-reload files changed externally
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  command = "checktime",
+})
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

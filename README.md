@@ -10,8 +10,8 @@ macOS 向けの個人用 dotfiles
 | `zshrc.local` | マシン固有の設定 (Git 管理外) |
 | `gitconfig` | Git エイリアス・設定 |
 | `starship.toml` | Starship プロンプトのテーマ設定 |
-| `ghostty/` | Ghostty ターミナル設定 |
-| `nvim/` | Neovim 設定 (vim-plug) |
+| `ghostty/` | ターミナル外観設定 (cmux が参照) |
+| `nvim/` | Neovim 設定 (lazy.nvim, neo-tree, diffview 等) |
 | `tmux.conf` | tmux 設定 |
 | `githooks/` | グローバル Git hooks |
 
@@ -19,13 +19,16 @@ macOS 向けの個人用 dotfiles
 
 - macOS
 - [Homebrew](https://brew.sh)
-- [Ghostty](https://ghostty.org)
+- [cmux](https://www.cmux.dev)
 
 以下は Homebrew 経由でインストールされます:
 
 - [mise](https://mise.jdx.dev) — ランタイムバージョン管理
 - [Starship](https://starship.rs) — シェルプロンプト
 - [Neovim](https://neovim.io)
+- [tmux](https://github.com/tmux/tmux)
+- [gitleaks](https://gitleaks.io) — シークレットスキャン
+- [glow](https://github.com/charmbracelet/glow) — ターミナルマークダウンビューア
 
 ## セットアップ
 
@@ -38,4 +41,3 @@ cd ~/dotfiles
 ## 手動設定
 
 - `~/.zshrc.local` にマシン固有の環境変数を記述 (Git 管理外)
-- Neovim 初回起動後に `:PlugInstall` でプラグインをインストール
