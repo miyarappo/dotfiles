@@ -1,0 +1,133 @@
+{
+  "env": {
+    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1"
+  },
+  "cleanupPeriodDays": 9999,
+  "permissions": {
+    "allow": [
+      "Bash(emmylua_check)",
+      "Bash(gh pr view)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git log:*)",
+      "Bash(git status:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Read(~/.config/git/message)",
+      "Read(**/.env.sample)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:github.com)",
+      "Write(/private/tmp)",
+      "Write(**/.env.sample)"
+    ],
+    "deny": [
+      "Bash(chmod 777:*)",
+      "Bash(gh repo delete:*)",
+      "Bash(mongod:*)",
+      "Bash(mysql:*)",
+      "Bash(nc:*)",
+      "Bash(psql:*)",
+      "Bash(sudo:*)",
+      "Bash(wget:*)",
+      "Read(**/*.env*)",
+      "Read(**/*aws*)",
+      "Read(**/*key*)",
+      "Read(**/*token*)",
+      "Read(**/*secrets*)",
+      "Read(**/*production*)",
+      "Read(id_ed25519)",
+      "Read(id_rsa)",
+      "Write(**/*.env*)",
+      "Write(**/*aws*)",
+      "Write(**/*key*)",
+      "Write(**/*production*)",
+      "Write(**/*secrets*)",
+      "Write(**/*token*)",
+      "Write(id_ed25519)",
+      "Write(id_rsa)"
+    ],
+    "ask": [
+      "Bash(curl:*)",
+      "Bash(git checkout:*)",
+      "Bash(git config:*)",
+      "Bash(git push:*)",
+      "Bash(git rebase:*)",
+      "Bash(git reset:*)",
+      "Bash(git rm:*)",
+      "Bash(git switch:*)"
+    ],
+    "defaultMode": "auto"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/deny-check.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Glass.aiff && terminal-notifier -title 'Claude Code' -message 'タスクが完了しました'"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.py"
+  },
+  "enabledPlugins": {
+    "ruby-lsp@claude-plugins-official": true,
+    "codex@openai-codex": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "voiceEnabled": true,
+  "skipAutoPermissionPrompt": true,
+  "mcpServers": {
+    "atlassian": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@atlassian/mcp"
+      ],
+      "env": {
+        "ATLASSIAN_SITE_NAME": "${ATLASSIAN_SITE_NAME}",
+        "ATLASSIAN_USER_EMAIL": "${ATLASSIAN_USER_EMAIL}",
+        "ATLASSIAN_API_TOKEN": "${ATLASSIAN_API_TOKEN}"
+      }
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}

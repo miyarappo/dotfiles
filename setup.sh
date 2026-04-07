@@ -30,6 +30,13 @@ ln -sfn "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
 ln -sfn "$DOTFILES_DIR/tmux.conf" "$HOME/.tmux.conf"
 ln -sfn "$DOTFILES_DIR/githooks" "$HOME/.githooks"
 
+# Claude Code
+mkdir -p "$HOME/.claude/hooks"
+ln -sfn "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
+ln -sfn "$DOTFILES_DIR/claude/keybindings.json" "$HOME/.claude/keybindings.json"
+ln -sfn "$DOTFILES_DIR/claude/statusline.py" "$HOME/.claude/statusline.py"
+ln -sfn "$DOTFILES_DIR/claude/hooks/deny-check.sh" "$HOME/.claude/hooks/deny-check.sh"
+
 echo "==> Done!"
 echo ""
 echo "Next steps:"
