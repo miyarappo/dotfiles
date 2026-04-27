@@ -1,12 +1,8 @@
 {
+  "cleanupPeriodDays": 9999,
   "env": {
     "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1"
   },
-  "sandbox": {
-    "enabled": true,
-    "autoAllowBashIfSandboxed": true
-  },
-  "cleanupPeriodDays": 9999,
   "permissions": {
     "allow": [
       "Bash(emmylua_check)",
@@ -93,7 +89,8 @@
   },
   "enabledPlugins": {
     "ruby-lsp@claude-plugins-official": true,
-    "codex@openai-codex": true
+    "codex@openai-codex": true,
+    "frontend-design@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -103,9 +100,15 @@
       }
     }
   },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
+  },
   "alwaysThinkingEnabled": true,
-  "voiceEnabled": true,
+  "autoUpdatesChannel": "stable",
+  "minimumVersion": "2.1.97",
   "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true,
   "mcpServers": {
     "atlassian": {
       "command": "npx",

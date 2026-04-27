@@ -44,7 +44,7 @@ alias md="glow -p"
 export PATH="$HOME/.rd/bin:$PATH"
 
 # AWSume configuration
-alias awsume="source \$(which awsume)"
+alias awsume='source "$(pyenv which awsume)"'
 
 # Auto-Complete function for AWSume (zsh version)
 _awsume() {
@@ -64,3 +64,6 @@ eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+export CLAUDE_CODE_EFFORT_LEVEL=max
+export PATH="$HOME/.local/bin:$PATH"

@@ -23,6 +23,7 @@ echo "==> Creating symlinks..."
 mkdir -p "$HOME/.config"
 
 ln -sfn "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
+[ -f "$DOTFILES_DIR/zshrc.local" ] && ln -sfn "$DOTFILES_DIR/zshrc.local" "$HOME/.zshrc.local"
 ln -sfn "$DOTFILES_DIR/gitconfig" "$HOME/.gitconfig"
 ln -sfn "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
 ln -sfn "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
@@ -36,6 +37,11 @@ ln -sfn "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
 ln -sfn "$DOTFILES_DIR/claude/keybindings.json" "$HOME/.claude/keybindings.json"
 ln -sfn "$DOTFILES_DIR/claude/statusline.py" "$HOME/.claude/statusline.py"
 ln -sfn "$DOTFILES_DIR/claude/hooks/deny-check.sh" "$HOME/.claude/hooks/deny-check.sh"
+# Claude Code skills (link each skill individually to coexist with other skills)
+for skill_dir in "$DOTFILES_DIR"/claude/skills/*/; do
+  skill_name=$(basename "$skill_dir")
+  ln -sfn "$skill_dir" "$HOME/.claude/skills/$skill_name"
+done
 
 echo "==> Done!"
 echo ""
