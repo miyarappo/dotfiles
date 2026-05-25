@@ -40,9 +40,6 @@ alias vim="nvim"
 alias view="nvim -R"
 alias md="glow -p"
 
-# Rancher Desktop
-export PATH="$HOME/.rd/bin:$PATH"
-
 # AWSume configuration
 alias awsume='source "$(pyenv which awsume)"'
 
@@ -65,5 +62,8 @@ eval "$(starship init zsh)"
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-export CLAUDE_CODE_EFFORT_LEVEL=max
 export PATH="$HOME/.local/bin:$PATH"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/minoru-miyata/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

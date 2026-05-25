@@ -52,7 +52,12 @@
       "Bash(curl:*)",
       "Bash(git checkout:*)",
       "Bash(git config:*)",
-      "Bash(git push:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push --force-with-lease:*)",
+      "Bash(git push -f:*)",
+      "Bash(git push --no-verify:*)",
+      "Bash(git push * main:*)",
+      "Bash(git push * master:*)",
       "Bash(git rebase:*)",
       "Bash(git reset:*)",
       "Bash(git rm:*)",
@@ -104,7 +109,9 @@
     "enabled": true,
     "autoAllowBashIfSandboxed": true
   },
+  "feedbackSurveyRate": 0,
   "alwaysThinkingEnabled": true,
+  "effortLevel": "xhigh",
   "autoUpdatesChannel": "stable",
   "minimumVersion": "2.1.97",
   "skipAutoPermissionPrompt": true,
@@ -136,5 +143,6 @@
         "@playwright/mcp@latest"
       ]
     }
-  }
+  },
+  "skipDangerousModePermissionPrompt": true
 }
