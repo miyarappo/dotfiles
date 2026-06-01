@@ -95,7 +95,8 @@
   "enabledPlugins": {
     "ruby-lsp@claude-plugins-official": true,
     "codex@openai-codex": true,
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -114,6 +115,8 @@
   "effortLevel": "xhigh",
   "autoUpdatesChannel": "stable",
   "minimumVersion": "2.1.97",
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
   "mcpServers": {
@@ -143,6 +146,5 @@
         "@playwright/mcp@latest"
       ]
     }
-  },
-  "skipDangerousModePermissionPrompt": true
+  }
 }
